@@ -1,6 +1,6 @@
 {
   "name": "enigma",
-  "app_id": "",
+  "app_id": "51698661",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
