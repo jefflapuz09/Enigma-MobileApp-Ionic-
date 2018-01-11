@@ -10,18 +10,40 @@
 <ion-content padding>
   <h3>Deep Web Enigma Admins and Editors</h3>
 
-  <ion-grid>
-      <ion-row border>
-        <ion-col col-3 text-center>Id</ion-col>
-        <ion-col col-3 text-center>Penname</ion-col>
-        <ion-col col-3 text-center>Description</ion-col>
-        <ion-col col-3 text-center>Actions</ion-col>
-      </ion-row>
- 
-              
-          
-     
-    </ion-grid>
+  <ion-list>
+      <ion-item-sliding *ngFor="let member of members">
+        <ion-item (click)="Viewperson(member)">
+          <h2>{{member.penName}}</h2>
+          <p>{{member.id}}</p>
+          <p>{{member.descriptio}}</p>
+          <button item-end ion-button color="secondary">
+              <ion-icon name="eye"></ion-icon>
+              Update
+          </button>
+          <button item-end ion-button color="danger">
+              <ion-icon name="eye"></ion-icon>
+              Deactivate
+          </button>
+        </ion-item>
+        <ion-item-options side="left" >
+          <button ion-button color="light">Light
+            <ion-icon name="eye"></ion-icon>
+            View
+          </button>
+          <button ion-button color="secondary" (click)="update(id)">
+            <ion-icon name="open"></ion-icon>
+            Edit
+          </button>
+        </ion-item-options>
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="Delete(member.id)">
+            <ion-icon name="trash"></ion-icon>
+            Delete
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>    
+    </ion-list>
+    
 
 
 </ion-content>

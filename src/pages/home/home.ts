@@ -10,7 +10,7 @@ import { AdminProvider } from '../../providers/admin/admin';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  response:any;
+  members: any;
   constructor(public navCtrl: NavController, private adminProvider: AdminProvider) {
     
   }
@@ -22,9 +22,17 @@ export class HomePage {
 
   getAdmins()
   {
-    this.adminProvider.getAdmin().then(data => {
-      console.log(JSON.parse(data));
-    })
+    this.adminProvider.getAdmin().subscribe(
+      data => {
+          this.members = data;
+          console.log(data);
+    
+      },
+      err => {
+          console.log(err);
+      },
+      () => console.log('Admin Search Complete')
+  );
   }
 
 }

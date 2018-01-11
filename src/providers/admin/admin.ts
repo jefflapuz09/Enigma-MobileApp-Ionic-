@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import {Http, Response} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 /*
@@ -17,12 +18,12 @@ export class AdminProvider {
 
 
 
-  getAdmin() : Promise<any>
+  getAdmin()
   {
-    let url = "http://localhost/enimaBackend/viewAdmin.php";
-    let request = this.http.get(url);
-
-    return request.toPromise();
+    var url = 'http://localhost/enimaBackend/viewAdmin.php';
+    var response = this.http.get(url);
+    
+    return response;
   }
 
 }
