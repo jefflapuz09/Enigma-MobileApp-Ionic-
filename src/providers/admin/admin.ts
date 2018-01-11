@@ -20,7 +20,7 @@ export class AdminProvider {
 
   getAdmin()
   {
-    var url = 'http://localhost/enimaBackend/viewAdmin.php';
+    var url = 'https://backendtesting.000webhostapp.com/viewAdmin.php';
     var response = this.http.get(url);
     
     return response;
