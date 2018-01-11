@@ -5,6 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { CreateAdminPage } from '../pages/create-admin/create-admin';
 
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,7 +18,8 @@ import { AdminProvider } from '../providers/admin/admin';
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    CreateAdminPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { AdminProvider } from '../providers/admin/admin';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    CreateAdminPage
   ],
   providers: [
     StatusBar,

@@ -3,4 +3,26 @@ page-home {
        
         border: 1px solid black;
         }
+
+    .master
+    {
+        background:#252525;
+    }
+
+    .masteritem
+    {
+        background:teal;
+        color:white;
+    }
+
+    .refresh
+    {
+        background:darkslateblue;
+        color:white;
+    }
+
+    .refresh .txt
+    {
+        color:white
+    }
 }

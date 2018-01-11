@@ -26,4 +26,13 @@ export class AdminProvider {
     return response;
   }
 
+  InsertMember(penName,gender,description)
+  {
+      var url = 'http://localhost/enimaBackend/insertAdmin.php';
+      var param = { penName,gender,description }; 
+      var response = this.http.post(url, param);
+
+    return response;
+  }
+
 }
