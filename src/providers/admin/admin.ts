@@ -28,7 +28,7 @@ export class AdminProvider {
 
   InsertMember(penName,gender,description)
   {
-      var url = 'http://localhost/enimaBackend/insertAdmin.php';
+      var url = 'https://backendtesting.000webhostapp.com/insertAdmin.php';
       var param = { penName,gender,description }; 
       var response = this.http.post(url, param);
 
