@@ -23,15 +23,17 @@
         {{admin.name}}
       </ion-card-title>
 		
-
-		<div [innerHTML]="admin.description"></div>
+      <ion-item color="danger" text-center>
+          <ion-icon name='md-mail'style="color: white"></ion-icon>
+           <p>{{admin.email}}</p>
+        </ion-item>
       
     </ion-card-content>
 
-    <ion-item color="secondary">
-      <ion-icon name='md-mail' item-start style="color: white"></ion-icon>
-	   {{admin.email}}
-    </ion-item>
+   
+    <div padding>
+        <div [innerHTML]="admin.description"></div>
+    </div>
 
 
   </ion-card>
