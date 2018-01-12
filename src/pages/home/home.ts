@@ -4,6 +4,8 @@ import 'rxjs/add/operator/map';
 import {Http} from '@angular/http';
 import { AdminProvider } from '../../providers/admin/admin';
 import { CreateAdminPage } from '../create-admin/create-admin';
+import { ViewAdminPage } from '../view-admin/view-admin';
+
 
 @Component({
   selector: 'page-home',
@@ -57,5 +59,11 @@ export class HomePage {
         content: "Loading..."
     });
     this.loader.present();
-}
+	}
+	
+	viewAdmin(member)
+	{
+		this.navCtrl.push(ViewAdminPage,{member:member});
+	}
+	
 }

@@ -22,27 +22,18 @@
   <h5 ion-text margin-top text-center text-uppercase style="color:springgreen;">Admins and Editors</h5>
   </div>
 
-  <div>
-  <ion-item no-lines item-end margin-top margin-bottom class="master">
-      <button item-end outline ion-button color="secondary" (click)="createAdmin()" style="margin-bottom: 10px;">
-          <ion-icon name="create"></ion-icon>
-          New Record
-      </button>
-  </ion-item>
-  </div>
-
-  <ion-list no-lines>
+  <ion-list no-lines style="margin-top:50px">
       <ion-item-sliding  *ngFor="let member of members">
-        <ion-item no-lines (click)="Viewperson(member)" margin-right class="masteritem">
+        <ion-item no-lines  margin-right class="masteritem">
             <ion-avatar item-start>
-                <img src="../assets/imgs/avatar/{{(member.gender == 0 ?'male':'female')}}.png">
+                <img src="../assets/imgs/avatar/{{(member.gender == 1 ?'male':'female')}}.png">
               </ion-avatar>
-          <h2>{{member.penName}}</h2>
+          <h2>{{member.name}}</h2>
         </ion-item>
         <ion-item-options side="left" >
-            <button item-end ion-button color="secondary">
-                <ion-icon name="hammer"></ion-icon>
-                Update
+            <button (click)="viewAdmin(member)"item-end ion-button color="secondary">
+                <ion-icon name="eye"></ion-icon>
+                View
             </button>
         </ion-item-options>
         <ion-item-options side="right">

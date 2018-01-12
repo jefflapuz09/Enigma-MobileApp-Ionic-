@@ -20,7 +20,7 @@ export class AdminProvider {
 
   getAdmin()
   {
-    var url = 'https://backendtesting.000webhostapp.com/viewAdmin.php';
+    var url = 'http://localhost:8000/userResp';
     var response = this.http.get(url);
     
     return response;
@@ -28,7 +28,7 @@ export class AdminProvider {
 
   InsertMember(penName,gender,description)
   {
-      var url = 'https://backendtesting.000webhostapp.com/insertAdmin.php';
+      var url = 'http://localhost/enimaBackend/insertAdmin.php';
       var param = { penName,gender,description }; 
       var response = this.http.post(url, param);
 

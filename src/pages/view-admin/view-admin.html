@@ -1,0 +1,38 @@
+<!--
+  Generated template for the ViewAdminPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Admin's Info</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="master">
+	  <ion-card>
+	<div class="text-center" style="margin-top:40px;">
+    <img src="../assets/imgs/avatar/{{(admin.gender == 1 ?'male':'female')}}.png" style="height:150px; width:150px; margin: 0 auto;">
+	</div>
+    <ion-card-content>
+      <ion-card-title color="dark" text-center>
+        {{admin.name}}
+      </ion-card-title>
+		
+
+		<div [innerHTML]="admin.description"></div>
+      
+    </ion-card-content>
+
+    <ion-item color="secondary">
+      <ion-icon name='md-mail' item-start style="color: white"></ion-icon>
+	   {{admin.email}}
+    </ion-item>
+
+
+  </ion-card>
+</ion-content>

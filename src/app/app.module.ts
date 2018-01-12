@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { CreateAdminPage } from '../pages/create-admin/create-admin';
+import { ViewAdminPage } from '../pages/view-admin/view-admin';
 
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +20,8 @@ import { AdminProvider } from '../providers/admin/admin';
     MyApp,
     HomePage,
     ListPage,
-    CreateAdminPage
+    CreateAdminPage,
+	ViewAdminPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { AdminProvider } from '../providers/admin/admin';
     MyApp,
     HomePage,
     ListPage,
-    CreateAdminPage
+    CreateAdminPage,
+	ViewAdminPage
   ],
   providers: [
     StatusBar,
