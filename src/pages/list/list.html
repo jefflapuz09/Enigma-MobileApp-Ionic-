@@ -1,23 +1,43 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="danger">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title></ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
-</ion-content>
+<ion-content padding class="master">
+  
+
+    <div>
+    <h5 ion-text margin-top text-center text-uppercase style="color:springgreen;">Genres</h5>
+    </div>
+  
+    <ion-list no-lines style="margin-top:50px">
+        <ion-item-sliding  *ngFor="let member of members">
+          <ion-item no-lines  margin-right class="masteritem">
+              <ion-avatar item-start>
+                  <img src="../assets/imgs/avatar/{{(member.gender == 1 ?'male':'female')}}.png">
+                </ion-avatar>
+            <h2>{{member.name}}</h2>
+          </ion-item>
+          <ion-item-options side="left" >
+              <button (click)="viewAdmin(member)"item-end ion-button color="secondary">
+                  <ion-icon name="eye"></ion-icon>
+                  View
+              </button>
+          </ion-item-options>
+          <ion-item-options side="right">
+              <button item-end ion-button color="danger">
+                  <ion-icon name="archive"></ion-icon>
+                  Deactivate
+              </button>
+          </ion-item-options>
+        </ion-item-sliding>    
+      </ion-list>
+      
+  
+  
+  </ion-content>
+  

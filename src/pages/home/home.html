@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title></ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -19,7 +19,7 @@
   </ion-refresher>
 
   <div>
-  <h5 ion-text margin-top text-center text-uppercase style="color:springgreen;">Admins and Editors</h5>
+  <h5 ion-text margin-top text-center text-uppercase style="color:springgreen;">Admins</h5>
   </div>
 
   <ion-list no-lines style="margin-top:50px">
@@ -31,15 +31,15 @@
           <h2>{{member.name}}</h2>
         </ion-item>
         <ion-item-options side="left" >
-            <button (click)="viewAdmin(member)"item-end ion-button color="secondary">
+            <button (click)="viewAdmin(member)" item-end ion-button color="secondary">
                 <ion-icon name="eye"></ion-icon>
                 View
             </button>
         </ion-item-options>
         <ion-item-options side="right">
-            <button item-end ion-button color="danger">
+            <button item-end (click)="viewPost(member)" ion-button color="danger">
                 <ion-icon name="archive"></ion-icon>
-                Deactivate
+                Article
             </button>
         </ion-item-options>
       </ion-item-sliding>    

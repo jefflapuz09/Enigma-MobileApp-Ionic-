@@ -20,7 +20,7 @@ export class AdminProvider {
 
   getAdmin()
   {
-    var url = 'https://backendtesting.000webhostapp.com/userResp';
+    var url = 'http://localhost:8000/userResp';
     var response = this.http.get(url);
     
     return response;

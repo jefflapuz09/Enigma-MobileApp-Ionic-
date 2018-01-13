@@ -5,7 +5,7 @@ import {Http} from '@angular/http';
 import { AdminProvider } from '../../providers/admin/admin';
 import { CreateAdminPage } from '../create-admin/create-admin';
 import { ViewAdminPage } from '../view-admin/view-admin';
-
+import { PostPage } from '../post/post';
 
 @Component({
   selector: 'page-home',
@@ -64,6 +64,11 @@ export class HomePage {
 	viewAdmin(member)
 	{
 		this.navCtrl.push(ViewAdminPage,{member:member});
-	}
+  }
+  
+  viewPost(member)
+  {
+    this.navCtrl.push(PostPage,{member:member.id});
+  }
 	
 }
