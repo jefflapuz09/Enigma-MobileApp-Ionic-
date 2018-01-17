@@ -3,6 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import {Http} from '@angular/http';
 import { CategoryProvider } from '../../providers/category/category';
+import { PostGenrePage } from '../post-genre/post-genre';
+
 
 @Component({
   selector: 'page-list',
@@ -31,5 +33,10 @@ export class ListPage {
       },
       () => console.log('Category Search Complete')
   );
+  }
+
+  viewPost(member)
+  {
+    this.navCtrl.push(PostGenrePage,{member:member.id});
   }
 }

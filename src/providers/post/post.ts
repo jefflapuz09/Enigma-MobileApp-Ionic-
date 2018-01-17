@@ -23,4 +23,13 @@ export class PostProvider {
 
     return response;
   }
+
+  getViewArticle(postId)
+  {
+
+      var url = 'http://localhost:8000/postGenre/'+postId;
+      var response = this.http.get(url);
+
+    return response;
+  }
 }

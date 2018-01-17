@@ -8,6 +8,9 @@ import { ListPage } from '../pages/list/list';
 import { CreateAdminPage } from '../pages/create-admin/create-admin';
 import { ViewAdminPage } from '../pages/view-admin/view-admin';
 import { PostPage } from '../pages/post/post';
+import { ViewPostPage } from '../pages/view-post/view-post';
+import { PostGenrePage } from '../pages/post-genre/post-genre';
+import { AboutPage } from '../pages/about/about';
 
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,7 +28,10 @@ import { PostProvider } from '../providers/post/post';
     ListPage,
     CreateAdminPage,
     ViewAdminPage,
-    PostPage
+    PostPage,
+    ViewPostPage,
+    PostGenrePage,
+    AboutPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +46,10 @@ import { PostProvider } from '../providers/post/post';
     ListPage,
     CreateAdminPage,
     ViewAdminPage,
-    PostPage
+    PostPage,
+    ViewPostPage,
+    PostGenrePage,
+    AboutPage
   ],
   providers: [
     StatusBar,

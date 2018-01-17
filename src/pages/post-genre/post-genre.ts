@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import 'rxjs/add/operator/map';
-import {Http} from '@angular/http';
 import { PostProvider } from '../../providers/post/post';
-import { ViewPostPage } from '../view-post/view-post';
-
+import { ViewPostPage } from '../view-post/view-post';  
 /**
- * Generated class for the PostPage page.
+ * Generated class for the PostGenrePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -14,10 +11,11 @@ import { ViewPostPage } from '../view-post/view-post';
 
 @IonicPage()
 @Component({
-  selector: 'page-post',
-  templateUrl: 'post.html',
+  selector: 'page-post-genre',
+  templateUrl: 'post-genre.html',
 })
-export class PostPage {
+export class PostGenrePage {
+
   members: any;
   id : any;
   constructor(public navCtrl: NavController, public navParams: NavParams, private postProvider: PostProvider) {
@@ -25,16 +23,16 @@ export class PostPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PostPage');
+    console.log('ionViewDidLoad PostGenrePage');
   }
 
   ngOnInit() 
   {
-    this.getPostAdmin(this.id);
+    this.getPostGenre(this.id);
   }
 
-  getPostAdmin(id){
-    this.postProvider.getPostAdmin(id).subscribe(
+  getPostGenre(id){
+    this.postProvider.getViewArticle(id).subscribe(
       data => {
           this.members = data;
           console.log(data);
@@ -50,5 +48,4 @@ export class PostPage {
   {
     this.navCtrl.push(ViewPostPage,{member:member});
   }
-
 }
