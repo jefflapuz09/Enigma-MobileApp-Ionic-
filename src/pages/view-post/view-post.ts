@@ -15,8 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ViewPostPage {
 post;
+imageExample;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.post = navParams.data.member;
+    this.imageExample = "https:\/\/stationpfe.000webhostapp.com\/projet\/uploads\/1494201248244.jpg";
   }
 
   ionViewDidLoad() {
