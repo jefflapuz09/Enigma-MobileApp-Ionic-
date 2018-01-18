@@ -17,7 +17,7 @@ export class CategoryProvider {
 
   getCategory()
   {
-    var url = 'http://localhost:8000/categoryResp';
+    var url = 'https://backendtesting.000webhostapp.com/categoryResp';
     var response = this.http.get(url);
     
     return response;

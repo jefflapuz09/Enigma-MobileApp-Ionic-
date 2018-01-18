@@ -7,23 +7,20 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="master">
-  
 
-    <div>
-    <h5 ion-text margin-top text-center text-uppercase style="color:springgreen;">Genres</h5>
-    </div>
-  
+<ion-content padding class="master">
+
+  <div>
+  <h5 ion-text margin-top text-center text-uppercase style="color:springgreen;">Tutorials</h5>
+  </div>
+
     <ion-list no-lines style="margin-top:50px">
-          <ion-item no-lines  (click)="viewPost(member)" margin-right class="masteritem" *ngFor="let member of members">
+          <ion-item no-lines (click)="viewArticle(member)" margin-right class="masteritem" *ngFor="let member of members">
               <ion-avatar item-start>
                   <ion-icon ios="ios-bookmark" md="md-bookmark"></ion-icon>
                 </ion-avatar>
-            <h2>{{member.name}}</h2>
-          </ion-item>
+            <h2>{{member.title}}</h2>
+          </ion-item>  
       </ion-list>
-      
-  
-  
-  </ion-content>
-  
+
+</ion-content>

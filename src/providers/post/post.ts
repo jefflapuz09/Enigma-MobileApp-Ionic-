@@ -18,7 +18,7 @@ export class PostProvider {
   getPostAdmin(adminId)
   {
 
-      var url = 'http://localhost:8000/postResp/'+adminId;
+      var url = 'https://backendtesting.000webhostapp.com/postResp/'+adminId;
       var response = this.http.get(url);
 
     return response;
@@ -27,9 +27,26 @@ export class PostProvider {
   getViewArticle(postId)
   {
 
-      var url = 'http://localhost:8000/postGenre/'+postId;
+      var url = 'https://backendtesting.000webhostapp.com/postGenre/'+postId;
       var response = this.http.get(url);
 
     return response;
+  }
+
+  getTutorial()
+  {
+
+      var url = 'https://backendtesting.000webhostapp.com/postTuts';
+      var response = this.http.get(url);
+
+    return response;
+  }
+
+  getFaqs()
+  {
+    var url = 'https://backendtesting.000webhostapp.com/postFaqs';
+    var response = this.http.get(url);
+
+  return response;
   }
 }

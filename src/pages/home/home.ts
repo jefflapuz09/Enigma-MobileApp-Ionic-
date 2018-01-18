@@ -68,7 +68,7 @@ export class HomePage {
   
   viewPost(member)
   {
-    this.navCtrl.push(PostPage,{member:member.id});
+    this.navCtrl.push(PostPage,{member:member.id,admin:member});
   }
 	
 }

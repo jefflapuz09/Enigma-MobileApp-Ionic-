@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar color="danger">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title></ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding class="master">
+
+  
+    <div>
+        <h3 ion-text margin-top margin-bottom text-center text-uppercase style="color: darkorange;">Frequently Asked Questions</h3>
+    </div>
+
+    <ion-card color="danger" *ngFor="let member of members">
+
+          <div padding>
+              <h3>{{member.question}}</h3>
+          </div>
+        <ion-card-content>
+          <div [innerHTML]="member.answer"></div>
+        </ion-card-content>
+      </ion-card>
+
+</ion-content>

@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import 'rxjs/add/operator/map';
-import {Http} from '@angular/http';
 import { PostProvider } from '../../providers/post/post';
 import { ViewPostPage } from '../view-post/view-post';
-
 /**
- * Generated class for the PostPage page.
+ * Generated class for the TutorialPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -14,30 +11,26 @@ import { ViewPostPage } from '../view-post/view-post';
 
 @IonicPage()
 @Component({
-  selector: 'page-post',
-  templateUrl: 'post.html',
+  selector: 'page-tutorial',
+  templateUrl: 'tutorial.html',
 })
-export class PostPage {
-  members: any;
-  id : any;
-  op: string = "articles";
-  admin;
+export class TutorialPage {
+  members:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, private postProvider: PostProvider) {
-    this.id = navParams.get('member'); 
-    this.admin = navParams.data.admin;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PostPage');
+    console.log('ionViewDidLoad TutorialPage');
   }
 
   ngOnInit() 
   {
-    this.getPostAdmin(this.id);
+    this.getCategories();
   }
 
-  getPostAdmin(id){
-    this.postProvider.getPostAdmin(id).subscribe(
+  getCategories()
+  {
+    this.postProvider.getTutorial().subscribe(
       data => {
           this.members = data;
           console.log(data);
@@ -45,7 +38,7 @@ export class PostPage {
       err => {
           console.log(err);
       },
-      () => console.log('Admin Search Complete')
+      () => console.log('Tutorial Search Complete')
   );
   }
 

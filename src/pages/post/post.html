@@ -9,18 +9,56 @@
 
 <ion-content padding class="master">
 
-  <div>
-  <h5 ion-text margin-top text-center text-uppercase style="color:springgreen;">Articles</h5>
-  </div>
+    <div padding>
+        <ion-segment [(ngModel)]="op" color="secondary">
+          <ion-segment-button value="articles">
+            Articles
+          </ion-segment-button>
+          <ion-segment-button value="admin">
+            Admin Info
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+      
+      <div [ngSwitch]="op">
+        <ion-list *ngSwitchCase="'admin'">
+            <ion-card>
+                <div class="text-center" style="margin-top:20px;">
+                  <img src="../assets/imgs/avatar/{{(admin.gender == 1 ?'male':'female')}}.png" style="height:50px; width:50px; margin: 0 auto;">
+                </div>
+                  <ion-card-content>
+                    <ion-card-title color="dark" text-center>
+                        Behind the Pen name<br>{{admin.name}}
+                    </ion-card-title>
+                  
+                    
+                  </ion-card-content>
+              
+                 
+                  <div padding>
+                    
+                      <div [innerHTML]="admin.description"></div>
+                  </div>
+              
+              
+                </ion-card>
+          ...
+        </ion-list>
+      
+        <ion-list *ngSwitchCase="'articles'">
+            <ion-list no-lines style="margin-top:50px">
+                <ion-item no-lines (click)="viewArticle(member)" class="masteritem" *ngFor="let member of members">
+                    <ion-avatar item-start>
+                      <ion-icon ios="ios-book" md="md-book"></ion-icon>
+                      </ion-avatar>
+                  <h2>{{member.title}}</h2>
+                </ion-item>  
+            </ion-list>
+          ...
+        </ion-list>
+      </div>
 
-  <ion-list no-lines style="margin-top:50px">
-        <ion-item no-lines (click)="viewArticle(member)" class="masteritem" *ngFor="let member of members">
-            <ion-avatar item-start>
-              <ion-icon ios="ios-book" md="md-book"></ion-icon>
-              </ion-avatar>
-          <h2>{{member.title}}</h2>
-        </ion-item>  
-    </ion-list>
+  
     
 
 

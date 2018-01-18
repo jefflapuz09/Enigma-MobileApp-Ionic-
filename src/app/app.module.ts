@@ -11,6 +11,9 @@ import { PostPage } from '../pages/post/post';
 import { ViewPostPage } from '../pages/view-post/view-post';
 import { PostGenrePage } from '../pages/post-genre/post-genre';
 import { AboutPage } from '../pages/about/about';
+import { TutorialPage } from '../pages/tutorial/tutorial';
+import { ViewtutorialPage } from '../pages/viewtutorial/viewtutorial';
+import { FaqsPage } from '../pages/faqs/faqs';
 
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
@@ -31,7 +34,10 @@ import { PostProvider } from '../providers/post/post';
     PostPage,
     ViewPostPage,
     PostGenrePage,
-    AboutPage
+    AboutPage,
+    TutorialPage,
+    ViewtutorialPage,
+    FaqsPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +55,10 @@ import { PostProvider } from '../providers/post/post';
     PostPage,
     ViewPostPage,
     PostGenrePage,
-    AboutPage
+    AboutPage,
+    TutorialPage,
+    ViewtutorialPage,
+    FaqsPage
   ],
   providers: [
     StatusBar,
